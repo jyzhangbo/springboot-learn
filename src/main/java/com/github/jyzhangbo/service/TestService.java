@@ -23,20 +23,23 @@ public class TestService {
   @Autowired
   private Dao dao;
 
+  @Autowired
+  private CacheService cacheService;
+
   public QueryUserResp index(QueryUserReq req) throws CodeException {
-    QueryUserResp user = new QueryUserResp();
-    user.ok();
+    QueryUserResp resp = new QueryUserResp();
+    resp.ok();
     List<Record> query = dao.query("s_user", Cnd.where("USER_ID", "=", req.username));
     if (query == null || query.size() == 0) {
       throw new CodeException(ErrorCodes.ERROR_QUERY_USER.bind(req.username));
     }
 
-    user.userName = query.get(0).getString("USER_ID");
-    user.realName = query.get(0).getString("REAL_NAME");
-    user.email = query.get(0).getString("EMAIL");
-    user.mobile = query.get(0).getString("MOBILE");
+    resp.userName = query.get(0).getString("USER_ID");
+    resp.realName = cacheService.getRealName(resp.userName);
+    resp.email = query.get(0).getString("EMAIL");
+    resp.mobile = query.get(0).getString("MOBILE");
 
-    return user;
+    return resp;
   }
 
 }

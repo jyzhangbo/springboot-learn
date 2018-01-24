@@ -53,6 +53,10 @@
 			<artifactId>mapway-doc-ui</artifactId>
 			<version>${mapway.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-cache</artifactId>
+		</dependency>
 	</dependencies>
 
 	<profiles>
@@ -85,7 +89,6 @@
 									<user>SmartPV</user>
 									<pwd>SmartPV123</pwd>
 									<packageName>cn.ennwifi.smartpv.data.repository</packageName>
-									<interfaceName>TableInfo</interfaceName>
 								</configuration>
 							</execution>
 						</executions>
