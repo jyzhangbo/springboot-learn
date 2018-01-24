@@ -27,7 +27,7 @@ public class TestController {
   TestService testService;
 
   @RequestMapping(value = "/queryUser", method = RequestMethod.POST)
-  @Doc(value = "查询用户信息", author = "jyzhangbo@gmail.com", state = DevelopmentState.FINISH)
+  @Doc(value = "查询用户信息", author = "jyzhangbo@gmail.com", state = DevelopmentState.FINISH,tags="查询")
   public QueryUserResp index(@RequestBody QueryUserReq req) throws CodeException {
     return testService.index(req);
   }

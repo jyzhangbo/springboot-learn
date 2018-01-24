@@ -16,7 +16,7 @@ import cn.mapway.document.servlet.MapwayDocServlet;
  * @author zhangbo
  *
  */
-@Component
+//@Component
 public class DocumentServer extends ServletRegistrationBean {
 
   /**

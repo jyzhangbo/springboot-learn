@@ -10,7 +10,7 @@ import cn.mapway.document.annotation.Doc;
  * @author zhangjianshe
  *
  */
-@Doc(value = "文档使用说明", order = 0, group = "/文档使用说明", refs = {"docref/manual.html"})
+@Doc(value = "文档使用说明", order = 0, group = "/文档使用说明", refs = {"docref/information.md"})
 @Controller
 public class DocController {
 
