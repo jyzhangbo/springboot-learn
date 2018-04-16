@@ -18,7 +18,7 @@ public class DabaBaseSource {
 
   @ConfigurationProperties(prefix = "data")
   @Bean
-  public DruidDataSource dataSource() {
+  public DataSource dataSource() {
     DruidDataSource druidDataSource = new DruidDataSource();
     return druidDataSource;
   }
